@@ -6,8 +6,18 @@ import Features from './components/Features'
 import Story from './components/Story'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Lenis from 'lenis'
 
 const App = () => {
+    React.useEffect( ()=>{
+        const lenis = new Lenis()
+    
+        function raf(time){
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+      },[])
   return (
     <main className='ralative min-h-screen w-screen overflow-hidden'>
         <NavBar />
