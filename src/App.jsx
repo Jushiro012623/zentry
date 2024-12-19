@@ -10,14 +10,16 @@ import Lenis from 'lenis'
 
 const App = () => {
     React.useEffect( ()=>{
-        const lenis = new Lenis()
-    
+        const lenis = new Lenis({
+            smooth: 0.2,
+            multiplier: 5, 
+        });
         function raf(time){
           lenis.raf(time)
           requestAnimationFrame(raf)
         }
         requestAnimationFrame(raf)
-      },[])
+    },[])
   return (
     <main className='ralative min-h-screen w-screen overflow-hidden'>
         <NavBar />
